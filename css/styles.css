@@ -3,23 +3,46 @@
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
+:root {
+  --headColor: #d90429;
+  --blur: 0px;
+  --button2TextColor: white;
+  --button2BackgroundColor: black;
+  --headerTextColor: #f7fff7;
+  --projectsBackgroundColor: #8d99ae;
+  --projectsTextColor: black;
+  --bodyTextColor: #d90429;
+  --buttonColor: #4c1818;
+  --buttonTextColor: #f7fff7;
+  --certBackgroundColor: #edf2f4;
+  --certTextColor: black;
+  --contactInfoBackground: #2b2d42;
+  --contactInfoTextColor: #f7fff7;
+  --clockHandsColor: white;
+  --clockFaceColor: black;
+  --pencilFilter: grayscale(0%);
+}
+
 body {
-  color: #d90429;
+  color: var(bodyTextColor);
   margin: 0;
   padding: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 15px;
   line-height: 1.5;
 }
 img {
   width: 300px;
+  filter: grayscale();
 }
 a {
-  color: #FFE66D;
+  color: #ffe66d;
 }
 a:hover {
   text-decoration: none;
@@ -31,8 +54,9 @@ h1 {
 h2 {
   font-size: 45px;
 }
-h1, h2 {
-  font-family: 'Indie Flower', cursive;
+h1,
+h2 {
+  font-family: "Indie Flower", cursive;
   font-weight: 400;
   margin: 0;
 }
@@ -59,49 +83,188 @@ h3 {
   border-bottom: none;
 }
 
+.btn1 {
+  border-radius: 5px;
+  height: 25px;
+  width: 100px;
+  color: var(--button2TextColor);
+  background-color: var(--button2BackgroundColor);
+  float: left;
+  text-decoration: none;
+}
+
+.btn1:hover {
+  background: rgba(47, 48, 97, 80%);
+}
+
+/* Clock
+------------------------------------*/
+.clock {
+  width: 100px;
+  height: 100px;
+  border: 5px solid var(--clockFaceColor);
+  border-radius: 50%;
+  margin: 5px 5px;
+  float: right;
+  padding: 0.5rem;
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1), inset 0 0 0 3px #efefef,
+    inset 0 0 10px black, 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.clock-face {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform: translateY(-3px); /* account for the height of the clock hands */
+}
+
+.hand {
+  width: 50%;
+  height: 4px;
+  background: var(--clockHandsColor);
+  position: absolute;
+  top: 50%;
+  transform-origin: 100%;
+  transform: rotate(90deg);
+  transition: all 0.05s;
+  transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+}
+
+.hourHand {
+  width: 50%;
+  height: 5px;
+  background: var(--clockHandsColor);
+  position: absolute;
+  top: 50%;
+  transform-origin: 100%;
+  transform: rotate(90deg);
+  transition: all 0.05s;
+  transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+}
+
+.secondHand {
+  width: 50%;
+  height: 3px;
+  background: var(--clockHandsColor);
+  position: absolute;
+  top: 50%;
+  transform-origin: 100%;
+  transform: rotate(90deg);
+  transition: all 0.05s;
+  transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+}
 
 /* Profile
 ------------------------------------*/
 header {
-  background: #ef233c;
-  color: #F7FFF7;
+  background: var(--headColor);
+  color: #f7fff7;
 }
 
-
-/* Projects
+/* New Projects
 ------------------------------------*/
-.projects {
-  background: #8d99ae;
-}
-.projects a {
-  color: #4c1818;
-}
-.projects .btn {
-  color: #F7FFF7;
-  background: #4c1818;
-  text-decoration: none;
-  padding: 8px;
-  border-radius: 4px;
-  display: inline-block;
-}
-.projects .btn:hover {
-  background: rgba(47, 48, 97, 80%);
-}
-.project-item {
-  overflow: hidden;
-}
-.project-item h3 {
-  margin-top: 0;
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 
+.panels {
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+}
+
+.panel {
+  background: #6b0f9c;
+  box-shadow: inset 0 0 0 5px rgba(255, 255, 255, 0.1);
+  color: black;
+  text-align: center;
+  align-items: center;
+  /* Safari transitionend event.propertyName === flex */
+  /* Chrome + FF transitionend event.propertyName === flex-grow */
+  transition: font-size 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11),
+    flex 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11), background 0.2s;
+  font-size: 10px;
+  background-size: cover;
+  background-position: center;
+  flex: 1;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.panel1 {
+  background-image: url(../images/screen1.png);
+  color: white;
+}
+.panel2 {
+  background-image: url(../images/card-game.jpg);
+}
+.panel3 {
+  background-image: url(../images/choppedPenguin.png);
+  color: white;
+}
+.panel4 {
+  background-image: url(../images/hangman.png);
+}
+.panel5 {
+  background-image: url(../images/contacts.png);
+  color: white;
+}
+
+/* Flex Items */
+.panel > * {
+  margin: 0;
+  width: 100%;
+  transition: transform 0.5s;
+  flex: 1 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.panel > *:first-child {
+  transform: translateY(-100%);
+}
+.panel.open-active > *:first-child {
+  transform: translateY(0);
+}
+.panel > *:last-child {
+  transform: translateY(100%);
+}
+.panel.open-active > *:last-child {
+  transform: translateY(0);
+}
+
+.panel p {
+  text-transform: uppercase;
+  font-family: "Oswald", sans-serif;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
+  font-size: 2em;
+}
+
+.panel p:nth-child(2) {
+  font-size: 4em;
+}
+
+.panel.open {
+  flex: 5;
+  font-size: 40px;
+}
+
+@media only screen and (max-width: 600px) {
+  .panel p {
+    font-size: 1em;
+  }
+}
 
 /* Certificates
 ------------------------------------*/
 .certificates {
-  background: #edf2f4;
+  background: var(--certBackgroundColor);
+  color: var(--certTextColor);
 }
-
-
 
 /* Education
 ------------------------------------*/
@@ -115,12 +278,12 @@ header {
   width: 60%;
 }
 
-
 /* Contact Info
 ------------------------------------*/
 footer {
-  background: #2b2d42;
-  color: #F7FFF7;
+  background: var(--contactInfoBackground);
+  color: var(--contactInfoTextColor);
+  height: 330px;
 }
 .contact-list {
   list-style-type: none;
@@ -131,18 +294,24 @@ footer {
   display: inline-block;
 }
 
+.cat {
+  float: right;
+  height: 100px;
+  width: 100px;
+}
 
 /* Responsive
 ------------------------------------*/
-@media screen and (min-width:750px){
-  header, footer {
+@media screen and (min-width: 750px) {
+  header,
+  footer {
     text-align: center;
   }
   .project-item img {
     float: left;
     margin-right: 20px;
   }
- 
+
   .cert-item {
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -154,7 +323,7 @@ footer {
   }
 }
 
-@media screen and (max-width:749px){
+@media screen and (max-width: 749px) {
   h1 {
     font-size: 75px;
     line-height: 0.9;

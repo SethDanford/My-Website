@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seth Danford, RMIT Computer Science Student</title>
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
   </head>
   <body name='base'>
@@ -36,34 +34,35 @@
 
       <!-- ************ PROJECTS / PORTFOLIO  ************** -->
       <section class="projects">
-          <div class="panels">
-            <div class="panel panel1">
-              <p>Hey</p>
-              <p id="pan1">BMi Calculator</p>
-              <p>Dance</p>
-            </div>
-            <div class="panel panel2">
-              <p>Give</p>
-              <p>Black Jack</p>
-              <p>Receive</p>
-            </div>
-            <div class="panel panel3">
-              <p>Experience</p>
-              <p>Penguin Ninja</p>
-              <p>Today</p>
-            </div>
-            <div class="panel panel4">
-              <p>Give</p>
-              <p>Hangman</p>
-              <p>You can</p>
-            </div>
-            <div class="panel panel5">
-              <p>Life</p>
-              <p>Photo Book</p>
-              <p>Motion</p>
-            </div>
-          </div>        
+        <div class="content-wrap divider">
+          <h2>Featured Projects</h2>
+          <p>View selected projects below. These projects can be found on my <a href="https://github.com/SethDanford">GitHub</a>.</p>
 
+          <!-- Project 1 -->
+          <section class="project-item">
+            <img src="images/bmi-calculator.jpg" alt="An I O S calculator app that calculates you B M I">
+            <h3>My BMi Calculator App</h3>
+            <p>Developed an iOS app to allow people to calculate their Body Mass Index (BMI) based on their height and weight. The application is also capable of calculating someones BMI in both metric and imperial units.</p>
+            <a class="btn" href="https://github.com/SethDanford/My-BMi-iOS-App" target="_blank">GitHub Project</a>
+            <a class="btn" href="bmiApp.html" target="_blank">View Details</a>
+          </section>
+
+          <!-- Project 2 -->
+          <section class="project-item">
+            <img src="images/penguin-ninja.jpg" alt="Penguines being chopped">
+            <h3>Penguine Ninja Game</h3>
+            <p>This penguin ninja game is a game just like fruit ninja (if you remeber that game) where you have to chop the penguins and avoid the bombs. This game is one of the longest games I have ever coded coming in at over 500 lines of code.</p>
+            <a class="btn" href="https://github.com/SethDanford/penguin-ninja-iOS-app-game" target="_blank">GitHub Project</a>
+          </section>
+
+          <!-- Project 3 -->
+          <section class="project-item">
+            <img src="images/card-game.jpg" alt="Cards being delt">
+            <h3>Black Jack like Game</h3>
+            <p>This card game, built in the Java programming language was by far the longest and most complex application that I ever built. It is a game much like Black Jack exept that there is no bust and the goal is to get as close to 42 as possible. This applicaiton is able to add players, allow players to bet and all of the other standard functionality.</p>
+            <a class="btn" href="https://github.com/SethDanford/black-jack-java" target="_blank">GitHub Project</a>
+          </section>
+        </div>
       </section>
 
       <!-- ****************  Certificates  ******************** -->
@@ -151,7 +150,8 @@
 
 
 
-<!-- The following script is for activating dark mode -->
+
+
 <script>
   var buttonClicked = false;
   var elementIterator = 0; // Keeps track of which color we are on for turnDark() and turnLight().
