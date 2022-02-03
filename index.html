@@ -43,9 +43,9 @@
               <a href="bmiApp.html" style="color: black;">More Info</a>
             </div>
             <div class="panel panel2">
-              <p>Give</p>
+              <a href="blackjack.html" style="color: black;">More Info</a>
               <p id="pan2">Black Jack</p>
-              <p>Receive</p>
+              <a href="blackjack.html" style="color: black;">More Info</a>
             </div>
             <div class="panel panel3">
               <a href="penguinNinja.html" style="color: white;">More Info</a>
@@ -53,9 +53,9 @@
               <a href="penguinNinja.html" style="color: white;">More Info</a>            
             </div>
             <div class="panel panel4">
-              <p>Life</p>
+              <a href="photoBook.html" style="color: black;">More Info</a>
               <p id="pan4">Photo Book</p>
-              <p>Motion</p>
+              <a href="photoBook.html" style="color: black;">More Info</a>
             </div>
           </div>        
 
@@ -152,7 +152,7 @@
   var elementIterator = 0; // Keeps track of which color we are on for turnDark() and turnLight().
   function myFunction(){
     // The properties we are targeting/want to change the color of.
-    const elements = ['headColor', 'button2TextColor', 'button2BackgroundColor', 'headerTextColor', 'projectsBackgroundColor', 'projectsTextColor', 'bodyTextColor', 'buttonColor', 'buttonTextColor', 'certBackgroundColor', 'certTextColor', 'contactInfoBackground', 'contactInfoTextColor', 'clockHandsColor', 'clockFaceColor'];
+    const elements = ['headColor', 'button2TextColor', 'button2BackgroundColor', 'headerTextColor', 'projectsBackgroundColor', 'projectsTextColor', 'bodyTextColor', 'buttonColor', 'buttonTextColor', 'certBackgroundColor', 'certTextColor', 'contactInfoBackground', 'contactInfoTextColor', 'clockHandsColor', 'clockFaceColor','pencil','educationTextColor'];
     if (buttonClicked == false) {
       for (let e of elements) {
         turnDark(e);
@@ -171,13 +171,13 @@
 
   function turnLight(targetElement) {
 
-    const darkColors = ['#d90429', 'white', 'black', '#f7fff7', '#8d99ae', 'black', '#d90429', '#4c1818', '#f7fff7', '#edf2f4', 'black', '#2b2d42', '#f7fff7', 'white', 'black'];
+    const darkColors = ['#d90429', 'white', 'black', '#f7fff7', '#8d99ae', 'black', '#d90429', '#4c1818', '#f7fff7', '#edf2f4', 'black', '#2b2d42', '#f7fff7', 'white', 'black', 'url("images/pencil.jpg")', 'black'];
     document.documentElement.style.setProperty(`--${targetElement}`, darkColors[elementIterator]);
     elementIterator++;
     console.log('TurnDark'); // Test
   }
   function turnDark(targetElement) {
-    const lightColors = ['black', 'black', 'white', '#f7fff7', '#02033B', 'white', '#d90429', '#4c1818', '#f7fff7',  '#040676', 'white', '#2b2d42', '#f7fff7', 'white', 'black'];
+    const lightColors = ['black', 'black', 'white', '#f7fff7', '#02033B', 'white', '#d90429', '#4c1818', '#f7fff7',  '#494949', 'white', '#2b2d42', '#f7fff7', 'white', 'black', 'url("images/blackPencil.jpg")', '#add8e6'];
     document.documentElement.style.setProperty(`--${targetElement}`, lightColors[elementIterator]);
     elementIterator++;
     console.log('TurnLight'); // Test

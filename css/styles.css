@@ -27,6 +27,8 @@ html {
   --clockHandsColor: white;
   --clockFaceColor: black;
   --pencilFilter: grayscale(0%);
+  --pencil: url(images/pencil.jpg);
+  --educationTextColor: black;
 }
 
 body {
@@ -266,10 +268,11 @@ header {
 /* Education
 ------------------------------------*/
 .education {
-  background-image: url(../images/pencil.jpg);
+  background-image: var(--pencil);
   background-size: cover;
   background-position: right;
   padding-bottom: 100px;
+  color: var(--educationTextColor);
 }
 .education p {
   width: 60%;
