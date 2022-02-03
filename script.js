@@ -44,8 +44,6 @@ setDate();
 const panels = document.querySelectorAll('.panel');
 
 function toggleOpen() {
-  fader();
-  console.log('Hello');
   this.classList.toggle('open');
 }
 
@@ -61,21 +59,32 @@ panels.forEach(panel => panel.addEventListener('transitionend', toggleActive));
 
 
 // For fading in and out text. ----------------------------------- NOT WORKING!!!!!
-const target = document.getElementById("pan1");
+const panelText1 = document.getElementById("pan1");
+const panelText2 = document.getElementById("pan2");
+const panelText3 = document.getElementById("pan3");
+const panelText4 = document.getElementById("pan4");
 
-var toggler = true;
-function fader() {
-  console.log("CALLED");
-  if (toggler == true) {
+
+function fade(target) {
+  console.log("TARGET AQUIRED!")
+  console.log(target.style.opacity)
+
+  if (target.style.opacity == '1') {
     target.style.opacity = '0';
-    toggler = false;
-  } else {
-    toggler = true;
+    console.log(target.style.opacity)
+  } else if (target.style.opacity == '0') {
     target.style.opacity = '1';
+    console.log(target.style.opacity)
+  } else {
+    target.style.opacity = '0';
+    console.log(target.style.opacity)
   }
 }
 
-target.addEventListener('click', () => target.style.opacity = '0');
+panels[0].addEventListener('click', () => fade(panelText1));
+panels[1].addEventListener('click', () => fade(panelText2));
+panels[2].addEventListener('click', () => fade(panelText3));
+panels[3].addEventListener('click', () => fade(panelText4));
 
     
 

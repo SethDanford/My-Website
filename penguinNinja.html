@@ -32,6 +32,19 @@
                chances they have left.
             </p>
             <h3>What happening behind the scenes</h3>
+              <p>
+                In the GameViewController start by loading the SKscene from 'GameScene.sks', setting the
+                 scale mode to scale to fit the window and then presenting the scene
+                 itself.
+                 <p>
+                  In the GameScene we start by setting up the background and then giving
+                   the items in our world physics. We then declare the sequence in which the items will be
+                   thrown up the first time around after which we take that sequence and randomise it until 
+                  the user runs out of lives. I've created functions for creating the score label, creating
+                   the users lives/hearts, generating slices, creating enemies, subtracting lives, ending the game, etc.
+                   All working working in tadem to bring the experience you see on screen.
+                 </p>
+              </p>
           </section>
           <h2>Auto Layout</h2>
           <p>I used the main storyboard to create the auto layout constraints. The current iteration of the app only runs on iPads.</p>
